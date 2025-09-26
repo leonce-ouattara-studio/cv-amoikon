@@ -672,10 +672,33 @@ function App() {
                   )}
                 </div>
                 <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-4 md:p-6">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4">Informations Personnelles</h3>
-                  <p className="text-gray-600 text-sm">
-                    Téléchargez ce CV au format PDF pour vos candidatures professionnelles.
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4">Partager sur les réseaux</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Partagez ce CV professionnel sur vos réseaux sociaux
                   </p>
+                  <div className="flex flex-wrap gap-3">
+                    <button
+                      onClick={() => handleShare('facebook')}
+                      className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                    >
+                      <Facebook size={16} />
+                      <span>Facebook</span>
+                    </button>
+                    <button
+                      onClick={() => handleShare('linkedin')}
+                      className="flex items-center space-x-2 bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors text-sm"
+                    >
+                      <Linkedin size={16} />
+                      <span>LinkedIn</span>
+                    </button>
+                    <button
+                      onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(`Découvrez le CV professionnel de ${personalInfo.name} - ${personalInfo.title}\n\n${window.location.href}`)}`)}
+                      className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
+                    >
+                      <MessageCircle size={16} />
+                      <span>WhatsApp</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
